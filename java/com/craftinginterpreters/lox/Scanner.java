@@ -67,7 +67,21 @@ private void scanToken() {
         if (match('/')) {
             // A comment goes until the end of the line.
             while (peek() != '\n' && !isAtEnd()) advance();
-        } else {
+        } else if (match('*')){
+            // A block comment goes until the closing */.
+            while (!(peek() == '*' && peekNext() == '/') && !isAtEnd()) {
+                if (peek() == '\n') line++;
+                advance();
+            }
+            if (isAtEnd()) {
+                Lox.error(line, "Unterminated block comment.");
+                return;
+            }
+            // Consume the "*/"
+            advance();
+            advance();
+        }
+        else {
             addToken(SLASH);
         } break;
     case ' ':
