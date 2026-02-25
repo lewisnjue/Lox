@@ -21,6 +21,7 @@ runPrompt(); // run the REPL (Read-Eval-Print Loop) if no arguments are provided
 }
 
 
+
 private static void runFile(String path) throws IOException
 {
 byte[] bytes = Files.readAllBytes(Paths.get(path));
@@ -49,6 +50,7 @@ List<Token> tokens = scanner.scanTokens();
 for (Token token : tokens) {
     System.out.println(token);
     }
+
 }
 
 // error handling 

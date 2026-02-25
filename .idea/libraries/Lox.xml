@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Lox">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lox.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
